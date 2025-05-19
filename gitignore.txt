@@ -1,0 +1,46 @@
+# Ignore les fichiers de développement
+.DS_Store
+Thumbs.db
+
+# Ignore les fichiers d'éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore les logs
+*.log
+npm-debug.log*
+debug.log
+
+# Ignore les builds temporaires
+dist/
+build/
+temp/
+
+# Ignore les archives
+*.zip
+*.rar
+*.7z
+
+# Ignore les fichiers de test utilisateur
+test-files/
+sample-data/
+*.csv
+*.xlsx
+*.xls
+
+# Ignore les clés et secrets
+secrets/
+.env
+config.local.js
+
+# Ignore les sauvegardes
+*.bak
+*.backup
+*.old
+
+# Ignore les fichiers système
+.cache/
+.tmp/

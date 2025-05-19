@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Google Search Automation",
+  "version": "1.0",
+  "description": "Automatisez les recherches Google à partir d'un fichier CSV/Excel, et exportez les résultats.",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.google.com/*",
+    "https://www.google.fr/*",
+    "https://www.google.ca/*",
+    "https://www.google.co.uk/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/search*",
+        "https://www.google.fr/search*",
+        "https://www.google.ca/search*",
+        "https://www.google.co.uk/search*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": [
+        "https://www.google.com/*",
+        "https://www.google.fr/*",
+        "https://www.google.ca/*",
+        "https://www.google.co.uk/*"
+      ]
+    }
+  ]
+}
